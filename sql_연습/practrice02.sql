@@ -15,7 +15,6 @@ select date_format(max(hire_date), '%Y년 %m월 %d일')
 from employees;
 
 -- 문제3. 가장 오래 근속한 직원의 입사일은 언제인가요? 다음 형식으로 출력
--- 2014년 07월 10일
 select date_format(min(hire_date), '%Y년 %m월 %d일')
 from employees;
 
@@ -36,9 +35,9 @@ where to_date = '9999-01-01';
 -- 최고 어린 사원의 나이와 최연장자의 나이는?
 select date_format(now(), '%Y') - date_format(max(bireh_date), '%Y'),
        date_format(now(), '%Y') - date_format(min(birth_date), '%Y')
-from salaries
+from employees;
 
-select max(hire_date) as MIN나이, min(hire_ date) as MAX나이
-from employees
+select max(bireh_date) as MIN나이, min(hire_ date) as MAX나이
+from salaries
 
 
