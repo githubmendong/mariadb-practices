@@ -114,6 +114,3 @@ order by hire_date desc;
 select emp_no, salary
 from salaries
 order by emp_no asc, salary desc;
-
-
-    '
