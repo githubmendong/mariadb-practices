@@ -3,6 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/sql-practices/practrice01.sql" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/sql-practices/practrice02.sql" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/sql-practices/practrice03.sql" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/sql_연습/basic-query.sql" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/sql_연습/outer조인연습.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/sql_연습/날짜함수.sql" dialect="GenericSQL" />
