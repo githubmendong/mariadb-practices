@@ -86,4 +86,16 @@ group by a.title) a;
 -- sol2 ) top-k
 
 
--- 3-2) 복수행 연산자 :in , not in, 비교 연산자 any
+-- 3-2) 복수행 연산자 :in , not in, 비교 연산자 any, 비교 연산자 all>
+
+-- any
+-- 1. =any : in
+-- 2. >any, >=any : 최소값
+-- 3. <any, <=any : 최대값
+-- 4. !=any, <> any :not in
+
+-- all 사용법
+-- 1. =all :(x)
+-- 2. >all, >=all : 최대값
+-- 3. <all, <=all : 최소값
+-- 4. !=all, <> all
