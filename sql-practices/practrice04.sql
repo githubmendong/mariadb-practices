@@ -62,7 +62,7 @@ order by s.salary desc;
 -- 문제6.
 -- 평균 연봉이 가장 높은 부서는?
 
-select d.dept_name, avg(s.salary) as avg_salary
+select d.dept_name as 부서, avg(s.salary)
 from departments d
          join dept_emp de on d.dept_no = de.dept_no and de.to_date = '9999-01-01'
          join salaries s on de.emp_no = s.emp_no and s.to_date = '9999-01-01'
@@ -73,7 +73,7 @@ order by avg_salary desc limit 1;
 -- 문제7.
 -- 평균 연봉이 가장 높은 직책?
 
-select t.title, avg(s.salary) as avg_salary
+select t.title as 직책, avg(s.salary) as 평균연봉
 from titles t
          join salaries s on t.emp_no = s.emp_no and s.to_date = '9999-01-01'
 group by t.title
