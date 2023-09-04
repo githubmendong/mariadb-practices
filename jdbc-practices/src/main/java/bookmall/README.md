@@ -37,7 +37,7 @@ bookmall.main -> 이친구만 최종 실행 예정
 
 ---
 
-# Diagram
+# 📃Diagram
 
 ### 회원 `member`
 🔜 1:1 member_no -> member.no
