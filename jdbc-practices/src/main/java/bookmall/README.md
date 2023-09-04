@@ -40,20 +40,21 @@ bookmall.main -> 이친구만 최종 실행 예정
 # Diagram
 
 ### 회원 `member`
-
+🔜 1:1 member_no -> member.no
 * **이름, 전화번호, 이메일, 비밀번호**
 * `no`_(🔑 *, Auto)_, `name`, `phone_number`, `email`, `password`
 
 <br/>
 
 ### 카테고리 `category`
-
 * 소설, 수필, 컴퓨터/IT, 인문, 경제, 예술
 * `no`_(🔑 *, Auto)_, `nmae`
 
 <br/>
 
 ### 상품 `book`
+🔜 category_no -> category.no   
+
 
 * 제목, 가격
 * `no`_(🔑 *, Auto)_, `category_no`, `title`, `price`
@@ -61,7 +62,9 @@ bookmall.main -> 이친구만 최종 실행 예정
 <br/>
 
 ### 카트 `cart`
-🔜
+🔜 **1:1** member_no -> member.no   
+🔜 book_no -> book.no
+
 
 * 도서제목, 수량, 가격
 * `member_no`, `book_no`, `quantity`
@@ -73,7 +76,7 @@ bookmall.main -> 이친구만 최종 실행 예정
 🔜  member_no -> member.no
 
 * 주문번호, 주문자(이름/이메일), 결제금액, 배송지
-* `no`_(🔑 *, Auto)_, `orders_no`, `name`,`price`, `receive_address`, 🔜 **member_no**
+* `no`_(🔑 *, Auto)_, `orders_number`, `name`,`price`, `receive_address`, 🔜 **member_no**
 
 <br/>
 
@@ -83,3 +86,8 @@ bookmall.main -> 이친구만 최종 실행 예정
 
 * 도서번호, 도서제목, 수량
 * `orders_no`, `book_no`, `quantity`
+
+
+<br/>
+
+![img.png](img.png)
