@@ -124,18 +124,26 @@ bookmall.main -> 이친구만 최종 실행 예정
 
 ```mysql
 mysql -u root -p
+ 오류 발생시 > mysql -u root -p mysql -S /tmp/mysql.sock
+```
+1. ERROR 2002 (HY000) : Can’t connect to local MySQL server through socket ‘/var/run/mysqld/mysqld.sock’ (2)
+
+```mysql
+show databases; 
 ```
 
 ```mysql
-create databasse bookmall;
+create database bookmall;
 ```
 
 ```mysql
 create user 'bookmall'@'192.168.%' identified by 'bookmall';
+
 ```
 
 ```mysql
 grant all privileges on bookmall.* to 'bookmall'@'192.168.%';
+grant all privileges on *.* to 'bookmall'@'192.168.%' identified by '1234';
 ```
 
 ```mysql
@@ -143,6 +151,8 @@ flush privileges;
 ```
 ```mysql
 mysql -u bookmall -D bookmall -p
+ 오류 발생시 > mysql -u bookmall -p bookmall -S /tmp/mysql.sock
 ```
+
 
 
