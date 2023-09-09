@@ -18,25 +18,30 @@ public class CategoryDao extends BookMallDB {
         try {
             conn = getConnection();
 
-            String sql = "select * from category";
+            // 준비된 SQL 쿼리
+            String sql = "SELECT * FROM category";
             pstmt = conn.prepareStatement(sql);
             rs = pstmt.executeQuery();
 
-            while(rs.next()) {
-                int empNo = rs.getInt(1);
+            while (rs.next()) {
+                int categoryNo = rs.getInt(1);
                 String name = rs.getString(2);
 
-                System.out.println(empNo + " - " + name);
+                System.out.println(categoryNo + " - " + name);
             }
 
         } catch (SQLException e) {
-            System.out.println("error:" + e);
+            System.out.println("error: " + e);
         } finally {
             try {
-                if(pstmt != null) {
+                // 자원 정리
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pstmt != null) {
                     pstmt.close();
                 }
-                if(conn != null) {
+                if (conn != null) {
                     conn.close();
                 }
             } catch (Exception e) {
@@ -44,6 +49,7 @@ public class CategoryDao extends BookMallDB {
             }
         }
     }
+
 
     public void insert(CategoryVo categoryVo) {
         Connection conn = null;

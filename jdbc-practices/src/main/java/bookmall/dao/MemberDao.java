@@ -30,8 +30,8 @@ public class MemberDao extends BookMallDB {
                 String email = rs.getString(4);
                 String pw = rs.getString(5);
 
-                System.out.println("["+empNo+"]" + "[이름]" + name + "[전화번호]" + phone
-                        + "[이메일]" + email + "[비번]" + pw);
+                System.out.println("["+empNo+"] " + " [이름] " + name + " [전화번호] " + phone
+                        + " [이메일] " + email + " [비번] " + pw);
             }
 
         } catch (SQLException e) {
