@@ -37,8 +37,8 @@ public class OrderDao extends BookMallDB {
                 int price = rs.getInt(6);
                 String receive_address = rs.getString(7);
 
-                System.out.println(no + " - " + name + " " + phone
-                        + " " + email + " " + orders_no + " " + price + " " + receive_address);
+                System.out.println("["+no+"]" + " [이름] " + name + " [번호] " + phone
+                        + " [이메일] " + email + " [주문번호] " + orders_no + " [가격] " + price + " [배송주소] " + receive_address);
             }
 
         } catch (SQLException e) {

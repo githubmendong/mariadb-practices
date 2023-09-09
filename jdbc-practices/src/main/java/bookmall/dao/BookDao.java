@@ -18,9 +18,11 @@ public class BookDao extends BookMallDB {
             conn = getConnection();
 
             // 준비된 SQL 쿼리
-            String sql = "SELECT a.no, b.name, a.title, a.price " +
-                    "FROM book a, category b " +
-                    "WHERE a.category_no = b.no";
+            String sql =
+                    "SELECT a.no, b.name, a.title, a.price, ob.quantity " +
+                            "FROM book a " +
+                            "JOIN category b ON a.category_no = b.no " +
+                            "LEFT JOIN orders_book ob ON a.no = ob.book_no";
 
             pstmt = conn.prepareStatement(sql);
 
@@ -32,9 +34,10 @@ public class BookDao extends BookMallDB {
                 String categoryName = rs.getString(2);
                 String title = rs.getString(3);
                 int price = rs.getInt(4);
+                int quantity = rs.getInt(5);
 
-                System.out.println(bookNo + " - " + categoryName
-                        + " " + title + " " + price);
+                System.out.println("["+bookNo+"]" + " [서적 이름] " + categoryName
+                        + "-" + title +  " [가격] " + price + " [수량] " + quantity);
             }
 
         } catch (SQLException e) {
@@ -56,6 +59,7 @@ public class BookDao extends BookMallDB {
             }
         }
     }
+
 
 
     public void insert(BookVo bookVo) {

@@ -27,7 +27,7 @@ public class CategoryDao extends BookMallDB {
                 int categoryNo = rs.getInt(1);
                 String name = rs.getString(2);
 
-                System.out.println(categoryNo + " - " + name);
+                System.out.println("["+categoryNo +"]"+  " [카테고리] " + name);
             }
 
         } catch (SQLException e) {

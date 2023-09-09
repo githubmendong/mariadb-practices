@@ -8,8 +8,8 @@ public class BookMall {
     public static void main(String[] args) {
         // Member 데이터 생성
         MemberDao memberDao = new MemberDao();
-        memberDao.insert(new MemberVo("동징", "010-1234-1234", "1234@naver.com", "naver1234"));
-        memberDao.insert(new MemberVo("s머징", "010-3214-3124", "3214@naver.com", "naver4321"));
+        memberDao.insert(new MemberVo("동헌", "010-1234-1234", "1234@naver.com", "naver1234"));
+        memberDao.insert(new MemberVo("동징", "010-3214-3124", "3214@naver.com", "naver4321"));
         // Category 데이터 생성
         CategoryDao categoryDao = new CategoryDao();
         categoryDao.insert(new CategoryVo("자바"));
