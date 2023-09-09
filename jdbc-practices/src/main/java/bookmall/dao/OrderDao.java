@@ -109,12 +109,15 @@ public class OrderDao extends BookMallDB {
             String sql2 = "SELECT * FROM book;";
             pstmt2 = conn.prepareStatement(sql2);
 
+
             // SQL 실행 및 결과 가져오기
             rs = pstmt.executeQuery();
             rs2 = pstmt2.executeQuery();
 
+
             while (rs.next()) {
                 String num = rs.getString("book_no"); // orders_book 테이블의 열 이름 사용
+
                 String quantity = rs.getString("quantity"); // orders_book 테이블의 열 이름 사용
 
                 // orders_book 테이블의 book_no를 이용해 book 테이블에서 도서 제목 가져오기
@@ -141,13 +144,12 @@ public class OrderDao extends BookMallDB {
     }
 
     private static String getBookTitleByNo(String bookNo, ResultSet bookResultSet) throws SQLException {
-        bookResultSet.beforeFirst(); // ResultSet 포인터 위치를 처음으로 돌립니다.
-
         while (bookResultSet.next()) {
             String no = bookResultSet.getString("no"); // book 테이블의 열 이름 사용
             String title = bookResultSet.getString("title"); // book 테이블의 열 이름 사용
 
             if (no.equals(bookNo)) {
+                bookResultSet.beforeFirst(); // ResultSet 포인터 위치를 처음으로 돌립니다.
                 return title;
             }
         }

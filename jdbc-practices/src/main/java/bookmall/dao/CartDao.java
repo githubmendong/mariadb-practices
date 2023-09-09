@@ -17,41 +17,45 @@ public class CartDao extends BookMallDB {
         PreparedStatement pstmt = null;
 
         try {
-            //1. JDBC Driver Class 로딩
+            // 1. JDBC Driver Class 로딩
 
             conn = getConnection();
 
-            //3. ready SQL
+            // 2. 준비된 SQL 쿼리
             String sql =
-                    "select c.no, title, b.name, c.quantity*a.price"
-                            + " from book a, member b, cart c"
-                            + " where a.no = c.book_no"
-                            + " and b.no = c.member_no"
-                            + " order by c.no";
+                    "SELECT c.no, title, b.name, c.quantity * a.price " +
+                            "FROM book a, member b, cart c " +
+                            "WHERE a.no = c.book_no " +
+                            "AND b.no = c.member_no " +
+                            "ORDER BY c.no";
             pstmt = conn.prepareStatement(sql);
 
-            //5. SQL 실행
+            // 3. SQL 실행
             rs = pstmt.executeQuery();
 
-            while(rs.next()) {
-                int empNo = rs.getInt(1);
+            // 4. 결과 출력
+            while (rs.next()) {
+                int cartNo = rs.getInt(1);
                 String title = rs.getString(2);
-                String name = rs.getString(3);
-                int price = rs.getInt(4);
+                String memberName = rs.getString(3);
+                int totalPrice = rs.getInt(4);
 
-                System.out.println(empNo + " - " + title
-                        + " " + name + " " + price);
+                System.out.println("["+cartNo +"] " +" [서적 이름] "+ title
+                        + " " + memberName + " [가격] " + totalPrice);
             }
 
         } catch (SQLException e) {
-            System.out.println("error:" + e);
+            System.out.println("Error: " + e);
         } finally {
             try {
-                //6. 자원정리
-                if(pstmt != null) {
+                // 5. 자원 정리
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pstmt != null) {
                     pstmt.close();
                 }
-                if(conn != null) {
+                if (conn != null) {
                     conn.close();
                 }
             } catch (Exception e) {
