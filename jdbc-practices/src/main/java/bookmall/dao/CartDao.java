@@ -42,7 +42,7 @@ public class CartDao extends BookMallDB {
                 int totalPrice = rs.getInt(5);   // 합계 가격
 
                 System.out.println("["+cartNo +"] " +" [서적 이름] "+ title
-                        + " " + memberName + " [수량] " + totalQuantity + " [가격] " + totalPrice);
+                        + " " + " [수량] " + totalQuantity + " [가격] " + totalPrice);
             }
 
         } catch (SQLException e) {
