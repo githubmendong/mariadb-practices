@@ -31,24 +31,37 @@ public class BookMall {
         orderDao.insertOrderBook(new OrderBookVo(1, 1, 25));
         orderDao.insertOrderBook(new OrderBookVo(1, 2, 50));
 
+        //        ## 회원리스트
+        //                [1]  [이름] 동징 [전화번호] 010-1234-1234 [이메일] 1234@naver.com [비번] naver1234
+        //                [2]  [이름] s머징 [전화번호] 010-3214-3124 [이메일] 3214@naver.com [비번] naver4321
         // Member 리스트 출력
         System.out.println("## 회원리스트");
         memberDao.findAll();
         System.out.println();
 
-
+        //## 카테고리
+        //                [1] [카테고리] 자바
+        //                [2] [카테고리] 파이썬
+        //                [3] [카테고리] 씨플플
         // Category 리스트 출력
         System.out.println("## 카테고리");
         categoryDao.findAll();
         System.out.println();
 
 
+        //        ## 상품
+        //                [1] [서적 이름] 자바-자바의정석 [가격] 29000 [수량] 25
+        //                [2] [서적 이름] 파이썬-파이썬의정석 [가격] 39000 [수량] 50
+        //                [3] [서적 이름] 씨플플-씨플플의정석 [가격] 30000 [수량] 0
         // Book 리스트 출력
         System.out.println("## 상품");
         bookDao.findAll();
         System.out.println();
 
 
+        //        ## 카트
+        //                [1]  [서적 이름] 자바의정석 동징 [가격] 29000
+        //                [2]  [서적 이름] 파이썬의정석 s머징 [가격] 39000
         // Cart 리스트 출력
         System.out.println("## 카트");
         cartDao.findAll();
@@ -56,12 +69,16 @@ public class BookMall {
 
 
         // Order 리스트 출력
+        //        [1] [이름] 동징 [번호] 010-1234-1234 [이메일] 1234@naver.com [주문번호] 20230111111 [가격] 50000 [배송주소] 서울시
         System.out.println("## 주문");
         orderDao.findAllOrder();
         System.out.println();
 
 
         // OrderBook 리스트 출력
+        //        ## 주문 도서
+        //                [도서 번호] 1 [도서제목] 자바의정석 [수량] 25
+        //                [도서 번호] 2 [도서제목] 파이썬의정석 [수량] 50
         System.out.println("## 주문 도서");
         orderDao.findAllOrderBook();
     }
